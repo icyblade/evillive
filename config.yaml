@@ -1,0 +1,8 @@
+name: icyphptest
+version: 1
+handle:
+- directoryindex: index.php
+- errordoc: 404 /static/404.html
+- rewrite: if(path ~* "ilvl$") goto "/pages/ilvl.php"
+- hostaccess: if(path ~ "class") deny "all"
+- expire:  if( path ~ "img" ) time 3600
